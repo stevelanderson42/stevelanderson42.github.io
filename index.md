@@ -10,6 +10,12 @@ This portfolio is deployed and inspectable — working RAG retrieval, agentic ca
 
 ## Start here
 
+**[Requirements Guardrails — Live Demo](https://requirements-guardrails.streamlit.app)** · [Code & README](https://github.com/stevelanderson42/ai-prod-mgr/tree/main/modules/requirements-guardrails)
+
+A deterministic pre-invocation classifier that decides whether an AI request can safely proceed — routing to PROCEED, CLARIFY, ESCALATE, or BLOCK before any model is called.
+
+The live demo includes a Compare Mode: one toggle runs the classifier with and without its governance mechanisms, side by side, so you can see exactly how the architecture changes the outcome. No general-purpose LLM sits at the decision boundary — every classification traces to a rule or a documented mechanism, with a full audit trail.
+
 **[RAG Knowledge Pilot — Live Demo](https://rag-knowledge-pilot.streamlit.app)** · [Code & README](https://github.com/stevelanderson42/ai-prod-mgr/tree/main/modules/rag-knowledge-pilot)
 
 A measured retrieval system that treats refusal as a first-class output, not an error.
@@ -18,15 +24,13 @@ Evaluated on 15 domain-realistic compliance queries: 90.9% grounded answer rate 
 
 The live demo shows three governed behaviors — grounded answer, structured refusal with reason codes, and controlled reflection retry.
 
-**[Agentic Case Triage Workflow — Live Demo](https://ai-case-triage-workflow.streamlit.app)** · [Code & README](https://github.com/stevelanderson42/ai-prod-mgr/tree/main/modules/ai-case-triage-workflow)
+**[Agentic Case Triage Workflow — Live Demo](https://ai-case-triage-workflow.streamlit.app)** · [Code & README](https://github.com/stevelanderson42/ai-prod-mgr/tree/main/modules/agentic-case-triage)
 
 A six-node LangGraph workflow that classifies operational cases, extracts entities, retrieves policy from the RAG layer, scores priority, drafts internal routing notes, and produces a final routing decision.
 
 Every node's input, output, and rationale are exposed in an execution trace — showing how agentic workflows can be bounded, auditable, and integrated with governed retrieval.
 
 **[Full portfolio repository →](https://github.com/stevelanderson42/ai-prod-mgr)**
-
-Additional modules covering retrieval, refusal behavior, evaluation, agentic orchestration, governance controls, and Architecture Decision Records.
 
 ## Product approach
 
