@@ -10,7 +10,9 @@ This portfolio is deployed and inspectable — working RAG retrieval, agentic ca
 
 Built across the modern AI product prototyping stack — deeper deployed modules built with Python, Streamlit, LangGraph, VS Code, and Claude Code; rapid concept prototypes built with tools like Bolt.
 
-## Start here
+**On this page:** [Core AI modules](#core-ai-product-modules) · [Rapid Bolt prototype](#rapid-prototyping) · [Product approach](#product-approach) · [Contact](#contact)
+
+## Core AI product modules
 
 **[Requirements Guardrails — Live Demo](https://requirements-guardrails.streamlit.app)** · [Code & README](https://github.com/stevelanderson42/ai-prod-mgr/tree/main/modules/requirements-guardrails)
 
