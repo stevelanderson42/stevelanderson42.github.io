@@ -8,6 +8,8 @@ I'm a senior product manager with 12+ years in regulated financial services, now
 
 This portfolio is deployed and inspectable — working RAG retrieval, agentic case triage, structured refusal, audit-ready execution traces, live demos, and measured evaluation results.
 
+Built across the modern AI product prototyping stack — deeper deployed modules built with Python, Streamlit, LangGraph, VS Code, and Claude Code; rapid concept prototypes built with tools like Bolt.
+
 ## Start here
 
 **[Requirements Guardrails — Live Demo](https://requirements-guardrails.streamlit.app)** · [Code & README](https://github.com/stevelanderson42/ai-prod-mgr/tree/main/modules/requirements-guardrails)
@@ -31,6 +33,16 @@ A six-node LangGraph workflow that classifies operational cases, extracts entiti
 Every node's input, output, and rationale are exposed in an execution trace — showing how agentic workflows can be bounded, auditable, and integrated with governed retrieval.
 
 **[Full portfolio repository →](https://github.com/stevelanderson42/ai-prod-mgr)**
+
+## Rapid prototyping
+
+**[Revenue Risk Triage — Bolt Rapid Prototype](https://revenue-risk-triage-97zo.bolt.host)**
+
+A rapid prototype built in Bolt to explore senior-living revenue-cycle workflows for accounts receivable and claims follow-up. The prototype uses mock account data and deterministic rules to classify risk based on days outstanding, claim denial status, eligibility, and authorization state.
+
+The LLM layer is intentionally bounded: it generates plain-language explanations, next-best-action guidance, payer correspondence, and audit-style notes from structured account data — but it does not assign or change the risk score.
+
+*Built to demonstrate rapid AI-assisted prototyping, workflow decomposition, and a practical boundary between rules-based decisions and LLM-generated operational support. Public demo uses mock data and mock AI responses; no live API key is exposed.*
 
 ## Product approach
 
