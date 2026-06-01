@@ -38,7 +38,7 @@ Every node's input, output, and rationale are exposed in an execution trace — 
 
 ## Rapid prototyping
 
-**[Revenue Risk Triage — Bolt Rapid Prototype](https://revenue-risk-triage-97zo.bolt.host)**
+**[Senior Living Revenue Risk Triage — Bolt Rapid Prototype](https://revenue-risk-triage-97zo.bolt.host)**
 
 A rapid prototype built in Bolt to explore senior-living revenue-cycle workflows for accounts receivable and claims follow-up. The prototype uses mock account data and deterministic rules to classify risk based on days outstanding, claim denial status, eligibility, and authorization state.
 
