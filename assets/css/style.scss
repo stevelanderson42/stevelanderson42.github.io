@@ -8,3 +8,90 @@
   font-weight: 400;
   opacity: 0.95;
 }
+
+/* Conservative portfolio polish */
+
+.main-content {
+  max-width: 900px;
+}
+
+.intro-card,
+.module-block,
+.approach-box {
+  border: 1px solid #d8e2ef;
+  border-radius: 12px;
+  background: #f8fbff;
+  padding: 1.15rem 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.intro-card {
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.module-block {
+  background: #ffffff;
+}
+
+.module-block h3 {
+  margin-top: 0;
+}
+
+.pill {
+  display: inline-block;
+  margin: 0.15rem 0.2rem 0.35rem 0;
+  padding: 0.22rem 0.5rem;
+  border: 1px solid #d8e2ef;
+  border-radius: 999px;
+  background: #f3f6fa;
+  color: #334155;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.metrics-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.85rem 0 1rem;
+}
+
+.metrics-inline div {
+  min-width: 150px;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid #cfe9d8;
+  border-radius: 10px;
+  background: #edf7f1;
+}
+
+.metrics-inline strong {
+  display: block;
+  color: #146c2e;
+  font-size: 1.25rem;
+}
+
+.metrics-inline span {
+  display: block;
+  color: #335c41;
+  font-size: 0.82rem;
+}
+
+.approach-box {
+  border-left: 4px solid #159957;
+}
+
+@media screen and (max-width: 600px) {
+  .intro-card,
+  .module-block,
+  .approach-box {
+    padding: 1rem;
+  }
+
+  .metrics-inline {
+    display: block;
+  }
+
+  .metrics-inline div {
+    margin-bottom: 0.65rem;
+  }
+}
