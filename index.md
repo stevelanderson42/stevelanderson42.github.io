@@ -2,55 +2,61 @@
 layout: default
 ---
 
-*Denver, CO · Hybrid or remote · Actively interviewing for senior AI Product Manager roles*
+**Senior Product Manager. I build and ship working AI systems in regulated financial services.**
 
-I'm a senior product manager with 12+ years in regulated financial services, now focused on governed AI workflows for banking, wealth management, and trading contexts.
+Denver, CO · Hybrid or remote
 
-This portfolio is deployed and inspectable — working RAG retrieval, agentic case triage, structured refusal, audit-ready execution traces, live demos, and measured evaluation results.
+Twelve years building enterprise product in brokerage, wealth management, and trading, now focused on AI systems that make decisions people can inspect and act on.
 
-Built across the modern AI product prototyping stack — deeper deployed modules built with Python, Streamlit, LangGraph, VS Code, and Claude Code; rapid concept prototypes built with tools like Bolt.
+Everything below is deployed and running — not slides. Working retrieval, agentic workflows, decision scoring, structured refusal, and measured evaluation results. Source code and evaluation methodology are public.
 
-**On this page:** [Core AI modules](#core-ai-product-modules) · [Rapid Bolt prototype](#rapid-prototyping) · [Product approach](#product-approach) · [Contact](#contact)
+Built with Python, LangGraph, ChromaDB, React, and Streamlit, using Claude Code and VS Code.
 
-## Core AI product modules
+**On this page:** [Deployed work](#deployed-work) · [Approach](#approach) · [Contact](#contact)
 
-**[Requirements Guardrails — Live Demo](https://requirements-guardrails.streamlit.app)** · [Code & README](https://github.com/stevelanderson42/ai-prod-mgr/tree/main/modules/requirements-guardrails)
+## Deployed work
 
-A deterministic pre-invocation classifier that decides whether an AI request can safely proceed — routing to PROCEED, CLARIFY, ESCALATE, or BLOCK before any model is called.
+**[Advisor Transition Risk — Live Demo](https://stevelanderson42.github.io/advisor-transition-risk/)** · [Code & README](https://github.com/stevelanderson42/ai-prod-mgr/tree/main/modules/advisor-transition-risk)
 
-The live demo includes a Compare Mode: one toggle runs the classifier with and without its governance mechanisms, side by side, so you can see exactly how the architecture changes the outcome. No general-purpose LLM sits at the decision boundary — every classification traces to a rule or a documented mechanism, with a full audit trail.
+When a wealth-management advisor leaves, some of their clients leave with them. This models that chain in three stages: which advisors may depart, which households would follow them out, and how much of the book a transition actually recovered.
 
-**[RAG Knowledge Pilot — Live Demo](https://rag-knowledge-pilot.streamlit.app)** · [Code & README](https://github.com/stevelanderson42/ai-prod-mgr/tree/main/modules/rag-knowledge-pilot)
+The core modeling decision is that household departure risk has two independent components — the likelihood a family leaves regardless of advisor, and the likelihood they follow a specific advisor out the door. They're driven by different signals and imply different interventions, so the system scores and displays them separately.
 
-A measured retrieval system that treats refusal as a first-class output, not an error.
+Every score decomposes into its contributing factors inline. Where the data is too thin to score, the system says so and lists which signals are missing and which are present but unreliable — rather than producing a confident-looking number from nothing.
 
-Evaluated on 15 domain-realistic compliance queries: 90.9% grounded answer rate at the higher threshold with reflection, and 100% refusal correctness.
-
-The live demo shows three governed behaviors — grounded answer, structured refusal with reason codes, and controlled reflection retry.
+Python scoring engine, React front end, synthetic data. Built and deployed in one day.
 
 **[Agentic Case Triage Workflow — Live Demo](https://ai-case-triage-workflow.streamlit.app)** · [Code & README](https://github.com/stevelanderson42/ai-prod-mgr/tree/main/modules/agentic-case-triage)
 
-A six-node LangGraph workflow that classifies operational cases, extracts entities, retrieves policy from the RAG layer, scores priority, drafts internal routing notes, and produces a final routing decision.
+A six-node LangGraph workflow that classifies operational cases, extracts entities, retrieves policy from the RAG layer, scores priority, and produces a routing decision with human-in-the-loop escalation.
 
-Every node's input, output, and rationale are exposed in an execution trace — showing how agentic workflows can be bounded, auditable, and integrated with governed retrieval.
+Every node's input, output, and rationale is exposed in an execution trace — showing how agentic workflows can be bounded and auditable rather than opaque.
+
+**[RAG Knowledge Pilot — Live Demo](https://rag-knowledge-pilot.streamlit.app)** · [Code & README](https://github.com/stevelanderson42/ai-prod-mgr/tree/main/modules/rag-knowledge-pilot)
+
+A retrieval system that treats refusal as a first-class output rather than a failure. Evaluated across 15 domain-realistic queries: 90.9% grounded-answer rate and 100% refusal correctness.
+
+The demo shows three behaviors side by side — grounded answer, structured refusal with reason codes, and controlled reflection retry.
+
+**[Requirements Guardrails — Live Demo](https://requirements-guardrails.streamlit.app)** · [Code & README](https://github.com/stevelanderson42/ai-prod-mgr/tree/main/modules/requirements-guardrails)
+
+A deterministic pre-invocation classifier that decides whether an AI request can safely proceed, routing to PROCEED, CLARIFY, ESCALATE, or BLOCK before any model is called.
+
+Compare Mode runs the classifier with and without its control mechanisms side by side, so the architectural difference is visible rather than asserted.
+
+**[Senior Living Revenue Risk Triage — Rapid Concept Prototype](https://revenue-risk-triage-97zo.bolt.host)**
+
+Built in Bolt to explore revenue-cycle workflows for accounts receivable and claims follow-up. Deterministic rules classify risk; the LLM layer generates explanations, next-best-action guidance, and payer correspondence but never assigns or changes the score.
+
+Mock data and mock AI responses. Built to test how fast a workflow concept can be made tangible.
 
 **[Full portfolio repository →](https://github.com/stevelanderson42/ai-prod-mgr)**
 
-## Rapid prototyping
+## Approach
 
-**[Senior Living Revenue Risk Triage — Bolt Rapid Prototype](https://revenue-risk-triage-97zo.bolt.host)**
+Make the behavior inspectable before scaling it. Define the decision boundary, retrieve from approved sources, measure grounding and refusal, log the decision path, and surface uncertainty instead of hiding it.
 
-A rapid prototype built in Bolt to explore senior-living revenue-cycle workflows for accounts receivable and claims follow-up. The prototype uses mock account data and deterministic rules to classify risk based on days outstanding, claim denial status, eligibility, and authorization state.
-
-The LLM layer is intentionally bounded: it generates plain-language explanations, next-best-action guidance, payer correspondence, and audit-style notes from structured account data — but it does not assign or change the risk score.
-
-*Built to demonstrate rapid AI-assisted prototyping, workflow decomposition, and a practical boundary between rules-based decisions and LLM-generated operational support. Public demo uses mock data and mock AI responses; no live API key is exposed.*
-
-## Product approach
-
-My approach is to make AI behavior inspectable before it is scaled — define the policy boundary, retrieve from approved sources, measure grounding and refusal behavior, log the decision path, and escalate uncertainty instead of hiding it.
-
-That is the discipline I bring from regulated FinServ product work into LLM and agentic systems — informed by years of building product surfaces and customer-facing disclosures adjacent to model risk governance (SR 11-7), across credit, fraud, suitability, AML, and vendor models.
+That discipline comes from a decade of shipping product surfaces in regulated financial services, where every decision a system makes has to be explainable after the fact.
 
 ## Contact
 
