@@ -2,8 +2,6 @@
 layout: default
 ---
 
-**Senior Product Manager. I build and ship working AI systems in regulated financial services.**
-
 Denver, CO · Hybrid or remote
 
 Twelve years building enterprise product in brokerage, wealth management, and trading, now focused on AI systems that make decisions people can inspect and act on.
